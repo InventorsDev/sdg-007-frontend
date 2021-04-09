@@ -1,6 +1,6 @@
 <template>
   <div class="splash-bg">
-    <img src="~/assets/images/logo.png" alt="" />
+    <img src="~/assets/images/logo.svg" alt="" />
   </div>
 </template>
 

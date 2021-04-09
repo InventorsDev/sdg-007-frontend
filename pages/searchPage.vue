@@ -9,9 +9,13 @@
         <img src="~/assets/images/banner.jpg" width="320px" alt="" />
       </div>
       <div class="form">
-        <form action="">
+        <form action="" @submit.prevent="fetchDrug">
           <div class="form-area">
-            <input type="text" placeholder="Enter Nafdac - No" />
+            <input
+              type="text"
+              placeholder="Enter Nafdac - No"
+              v-model="nafdacNo"
+            />
             <img
               src="~/assets/images/search-icon.png"
               class="search-icon"
@@ -23,9 +27,7 @@
     </div>
 
     <div class="btn">
-      <NuxtLink to="/">
-        <button type="submit">Go Back</button>
-      </NuxtLink>
+      <button type="submit" @click="goBack">Go Back</button>
     </div>
   </div>
 </template>
@@ -35,7 +37,16 @@ export default {
   data() {
     return {
       myName: '',
+      nafdacNo: '',
     }
+  },
+  methods: {
+    goBack() {
+      this.$router.back()
+    },
+    fetchDrug() {
+      console.log(this.nafdacNo)
+    },
   },
   mounted() {
     if (localStorage.myName) {
