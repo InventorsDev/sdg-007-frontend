@@ -38,14 +38,25 @@ export default {
     return {
       myName: '',
       nafdacNo: '',
+      drugDetails: [],
     }
   },
   methods: {
     goBack() {
       this.$router.back()
     },
-    fetchDrug() {
-      console.log(this.nafdacNo)
+    async fetchDrug() {
+      this.drugDetails = await this.$axios.$get(
+        'https://dvapp.000webhostapp.com/api.php?',
+        {
+          params: {
+            reg: this.nafdacNo,
+          },
+        }
+      )
+
+      localStorage.setItem('drugsDetail', JSON.stringify(this.drugDetails))
+      this.$router.push({ path: '/resultPage' })
     },
   },
   mounted() {

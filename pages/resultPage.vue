@@ -34,7 +34,7 @@
       </svg>
     </div>
     <div class="content">
-      <h1 class="title">04-D533</h1>
+      <h1 class="title">{{ drugDetails.RegNo }}</h1>
       <img src="~/assets/images/confirm.png" class="confirm" alt="" />
       <div class="drug-details">
         <div class="detail">
@@ -93,10 +93,23 @@
 
 <script>
 export default {
+  data() {
+    return {
+      drugDetails: '',
+    }
+  },
   methods: {
     goBack() {
       this.$router.back()
     },
+  },
+  mounted() {
+    if (localStorage.drugsDetail) {
+      this.drugDetails = JSON.parse(localStorage.getItem('drugsDetail'))
+      //   console.log(this.drugDetails.RegNo)
+    } else {
+      console.log('nothing')
+    }
   },
 }
 </script>
