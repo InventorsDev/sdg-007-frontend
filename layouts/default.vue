@@ -19,7 +19,7 @@ html {
 .bg {
   height: 100vh;
   width: 100%;
-  background: url('~/assets/images/page-bg.jpg') no-repeat fixed center;
+  background: #f4f8fe;
 }
 
 img {
