@@ -39,6 +39,11 @@ export default {
     setTimeout(() => {
       this.isLoading = false
     }, 3000)
+
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 3000)
+    })
   },
   methods: {
     showName() {

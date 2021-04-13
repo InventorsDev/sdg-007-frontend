@@ -17,6 +17,8 @@
             <input
               type="text"
               placeholder="Enter Nafdac - No"
+              class="filled-input"
+              id="inputField"
               v-model="nafdacNo"
             />
             <img
@@ -35,7 +37,9 @@
 </template>
 
 <script>
+import loadingBar from '../components/loadingBar.vue'
 export default {
+  components: { loadingBar },
   data() {
     return {
       myName: '',
@@ -48,17 +52,29 @@ export default {
       this.$router.back()
     },
     async fetchDrug() {
-      this.drugDetails = await this.$axios.$get(
-        'https://dvapp.000webhostapp.com/api.php?',
-        {
-          params: {
-            reg: this.nafdacNo,
-          },
-        }
-      )
+      if (this.nafdacNo == '') {
+        let inputField = document.getElementById('inputField')
+        inputField.classList.add('empty-input')
+      } else {
+        inputField.classList.remove('empty-input')
 
-      localStorage.setItem('drugsDetail', JSON.stringify(this.drugDetails))
-      this.$router.push({ path: '/resultPage' })
+        this.$nextTick(() => {
+          this.$nuxt.$loading.start()
+          setTimeout(() => this.$nuxt.$loading.finish(), 2000)
+        })
+
+        this.drugDetails = await this.$axios.$get(
+          'https://dvapp.000webhostapp.com/api.php?',
+          {
+            params: {
+              reg: this.nafdacNo,
+            },
+          }
+        )
+
+        localStorage.setItem('drugsDetail', JSON.stringify(this.drugDetails))
+        this.$router.push({ path: '/resultPage' })
+      }
     },
   },
   mounted() {
@@ -113,9 +129,40 @@ export default {
 .form-area input {
   width: 320px;
   padding: 13px 10px;
-  border: 1px solid #707070;
+
   background-color: transparent;
   border-radius: 10px;
+}
+
+.filled-input {
+  border: 1px solid #707070;
+}
+
+.empty-input {
+  border: 2px solid red;
+  animation: shake 0.5s 8 ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(5px);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.empty-input:focus {
+  border: 1px solid #707070;
 }
 
 .form-area input:focus {
