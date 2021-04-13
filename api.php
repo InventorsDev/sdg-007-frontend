@@ -1,10 +1,10 @@
 <?php 
 header('Access-Control-Allow-Origin: *'); 
- 
- 
-$user="";
-$pass="";
-$db= "";
+          
+$user="id16550298_twotope";
+$pass="@Password1_2";
+$db= "id16550298_dvapp";
+
 $conn = new mysqli("localhost",$user,$pass,$db);
 
 // Check connection
@@ -47,6 +47,7 @@ echo  json_encode($arr);
    echo  json_encode($arr);
    exit();
 }
+
 
 
 
