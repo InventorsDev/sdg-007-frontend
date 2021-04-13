@@ -8,7 +8,8 @@
         <p class="highlight">Successful!</p>
         <p>
           This drug is approved by NAFDAC with Nafdac-no
-          {{ drugDetails.RegNo }} and Brand name of {{ drugDetails.Brand }}.
+          {{ drugDetails.RegNo }} and Brand name of <br />
+          {{ drugDetails.Brand }}.
         </p>
       </div>
     </div>
