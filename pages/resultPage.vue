@@ -3,11 +3,16 @@
     <div class="back" @click="goBack">
       <backIcon />
     </div>
-    <div class="content" v-if="this.drugDetails.Status === 'fail'">
-      <failurePage />
-    </div>
-    <div class="content" v-else-if="this.drugDetails.Status === 'success'">
-      <successPage />
+    <div class="content">
+      <div v-if="drugDetails.Status === 'success'">
+        <successPage :drugDetails="drugDetails" />
+      </div>
+      <div v-else-if="drugDetails.Status === 'fail'">
+        <failurePage :drugDetails="drugDetails" />
+      </div>
+      <div v-else>
+        <errorPage />
+      </div>
     </div>
   </div>
 </template>

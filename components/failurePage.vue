@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="cont">
-      <p class="title">49-22493</p>
+      <p class="title">{{ drugDetails.RegNo }}</p>
       <img src="~/assets/images/fail-tick.png" class="tick" alt="" />
 
       <div class="info">
@@ -16,7 +16,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    drugDetails: Object,
+  },
+}
 </script>
 
 <style scoped>
@@ -51,6 +55,27 @@ p {
 .tick {
   margin-bottom: 30px;
   margin-left: 35px;
+  animation: animate 3s infinite ease-in-out;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.9);
+  }
+  25% {
+    transform: scale(1);
+    transform: rotate(100deg);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+    transform: rotate(100deg);
+  }
 }
 
 .highlight {

@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <div class="cont">
-      <p class="title">49-22493</p>
+      <p class="title">{{ drugDetails.RegNo }}</p>
       <img src="~/assets/images/green tick.png" class="tick" alt="" />
 
       <div class="info">
         <p class="highlight">Successful!</p>
         <p>
-          This drug is approved by NAFDAC with Nafdac-no 49-2345 and Brand name
-          of IMASEUN LTD.
+          This drug is approved by NAFDAC with Nafdac-no
+          {{ drugDetails.RegNo }} and Brand name of {{ drugDetails.Brand }}.
         </p>
       </div>
     </div>
@@ -16,7 +16,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    drugDetails: Object,
+  },
+}
 </script>
 
 <style scoped>
@@ -51,6 +55,27 @@ p {
 .tick {
   margin-bottom: 30px;
   margin-left: -25px;
+  animation: animate 3s infinite ease-in-out;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.9);
+  }
+  25% {
+    transform: scale(1);
+    transform: rotate(100deg);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+    transform: rotate(100deg);
+  }
 }
 
 .highlight {
