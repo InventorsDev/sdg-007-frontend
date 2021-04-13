@@ -1,5 +1,8 @@
 <template>
   <div class="bg">
+    <div class="back" @click="goBack">
+      <backIcon />
+    </div>
     <div class="top">
       <div class="info">
         <h2>Hi {{ myName }}!</h2>
@@ -22,12 +25,11 @@
               alt=""
             />
           </div>
+          <div class="btn-area">
+            <button class="searchBtn" type="submit">Submit</button>
+          </div>
         </form>
       </div>
-    </div>
-
-    <div class="btn">
-      <button type="submit" @click="goBack">Go Back</button>
     </div>
   </div>
 </template>
@@ -73,9 +75,11 @@ export default {
 .bg {
   padding: 10px;
 }
-
+.back {
+  margin: 40px 0 20px 14px;
+}
 .top .info {
-  margin: 50px 0 30px 12px;
+  margin: 50px 0 30px 14px;
 }
 
 .top .info h2 {
@@ -92,7 +96,11 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+}
+
+.banner img {
+  border-radius: 10px;
 }
 
 .form-area {
@@ -120,18 +128,18 @@ export default {
   right: 20px;
 }
 
-.btn {
-  margin-top: 170px;
+.btn-area {
+  margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.btn button {
-  padding: 5px 20px;
-  border-radius: 20px;
-  outline: none;
-  border: 1px solid #707070;
-  color: #7b7b7b;
+.searchBtn {
+  background-color: #2165c6;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 12px 20px;
 }
 </style>

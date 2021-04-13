@@ -7,8 +7,13 @@
         <p>Can I know your name?</p>
         <span>Note, we are not storing your name in any database</span>
       </div>
-      <form class="form" @submit.prevent="showName">
-        <input type="text" v-model="myName" placeholder="Name (optional)" />
+      <form action="" class="form" @submit.prevent="showName">
+        <div class="form-area">
+          <input type="text" placeholder="Name (optional)" v-model="myName" />
+        </div>
+        <div class="btn-area">
+          <button class="searchBtn" type="submit">Submit</button>
+        </div>
       </form>
       <div class="btn">
         <NuxtLink to="/searchPage">
@@ -55,7 +60,7 @@ export default {
 }
 
 .top {
-  margin-bottom: 150px;
+  margin-bottom: 130px;
 }
 .top h1 {
   font-weight: bolder;
@@ -69,16 +74,37 @@ export default {
   color: rgb(104, 103, 103);
 }
 
-.form input {
-  width: 300px;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid #707070;
-  background-color: transparent;
+.form-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.form input:focus {
+.form-area input {
+  width: 320px;
+  padding: 13px 10px;
+  border: 1px solid #707070;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.form-area input:focus {
   outline: none;
+}
+
+.btn-area {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.searchBtn {
+  background-color: #2165c6;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 12px 20px;
 }
 
 .btn {
