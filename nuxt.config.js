@@ -20,6 +20,8 @@ export default {
     ]
   },
 
+  loading: '~/components/loadingBar.vue',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
