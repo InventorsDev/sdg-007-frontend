@@ -8,7 +8,13 @@
         <p class="highlight">Oops!</p>
         <p>
           This drug is not approved by NAFDAC and we strongly advice you not to
-          make use of this drug.
+          make use of this drug. Please visit the NAFDAC website to lay a
+          complaint
+          <a
+            href="https://www.nafdac.gov.ng/about-nafdac/contact-nafdac/complaints-and-enquiries/"
+            target="_blank"
+            >HERE</a
+          >.
         </p>
       </div>
     </div>
