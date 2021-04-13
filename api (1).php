@@ -2,9 +2,9 @@
 header('Access-Control-Allow-Origin: *'); 
  
  
-$user="id16550298_drug1";
-$pass="3%0xUW!Su!WT+^FV";
-$db= "id16550298_drug";
+$user="";
+$pass="";
+$db= "";
 $conn = new mysqli("localhost",$user,$pass,$db);
 
 // Check connection
