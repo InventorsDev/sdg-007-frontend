@@ -26,6 +26,12 @@ img {
   max-width: 100%;
 }
 
+@media only screen and (min-device-width: 800px) and (min-width: 561px) {
+  html {
+    display: none;
+  }
+}
+
 *,
 *::before,
 *::after {
