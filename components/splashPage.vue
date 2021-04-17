@@ -19,7 +19,7 @@ export default {}
   align-items: center;
 }
 
-.splash-bg IMG {
+.splash-bg img {
   max-width: 100%;
 }
 </style>
