@@ -15,6 +15,11 @@
 <script>
 export default {
   layout: 'bottomBarLayout',
+  methods: {
+    goBack() {
+      this.$router.back()
+    },
+  },
 }
 </script>
 
