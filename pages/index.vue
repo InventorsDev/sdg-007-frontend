@@ -16,7 +16,7 @@
         </div>
       </form>
       <div class="btn">
-        <NuxtLink to="/searchPage">
+        <NuxtLink to="/home">
           <button type="submit">Skip</button>
         </NuxtLink>
       </div>
@@ -49,7 +49,7 @@ export default {
     showName() {
       localStorage.myName = this.myName
       this.myName = ''
-      this.$router.push({ path: '/searchPage' })
+      this.$router.push({ path: '/home' })
     },
   },
 }
