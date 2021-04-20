@@ -37,9 +37,8 @@
 </template>
 
 <script>
-import loadingBar from '../components/loadingBar.vue'
 export default {
-  components: { loadingBar },
+  layout: 'bottomBarLayout',
   data() {
     return {
       myName: '',
