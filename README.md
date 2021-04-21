@@ -4,7 +4,16 @@ Nuxt.js was used in building the frontend of this web application and PHP/mySQL 
 
 ## About
 
-Dv App is a drug verification app that will enable users verify drugs with the nafdac number before taking them. Users will be able to confirm if any drug is approved by nafdac alsongside some basic information about the drug.
+ABOUT PAGE
+There is a popular saying which says "Health is Wealth"
+Our society right now is faced with the challenge of dealing with fake drugs which has taken over our markets and even going the extent of claiming innocent lives.
+Some young talented minds saw this as a problem to the society and decided to rise to the challenges to limit it's destruction to lives.
+They decided to provide a solution to this challenges in line with the United Nations Sustainable Development Goal (SDG) No. 3: Good Health and Well-being. Ensuring healthy lives and promoting the well-being for all at all ages is essential to sustainable development.
+This young minds arrived at a solution by developing this App called "DV App" (Drug Verification app).
+It was designed for the public to be able to verify their drugs upon purchase from any drug vendor, to verify if the drugs they are about to consume is void of harm and if it is fully endorsed by the National Agency of Foods and Drugs Administration Company (NAFDAC) which is concerned with the regularisation of consumables.
+
+                 OUR VISION
+We believe that this App will go a long way in helping save lives and also put to check the amount of fake drugs that is being put out by some people who has no regards for human lives and try to enrich themselves at the expense of innocent lives.
 
 ## Why
 
