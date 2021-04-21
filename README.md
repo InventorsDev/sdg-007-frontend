@@ -3,8 +3,6 @@ Nuxt.js was used in building the frontend of this web application and PHP/mySQL 
 
 
 ## About
-
-ABOUT PAGE
 There is a popular saying which says "Health is Wealth"
 Our society right now is faced with the challenge of dealing with fake drugs which has taken over our markets and even going the extent of claiming innocent lives.
 Some young talented minds saw this as a problem to the society and decided to rise to the challenges to limit it's destruction to lives.
