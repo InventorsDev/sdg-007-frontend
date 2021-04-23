@@ -1,51 +1,28 @@
 <template>
   <svg
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    width="29.221"
-    height="19.167"
-    viewBox="0 0 29.221 19.167"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
   >
-    <g id="iconfinder_about_us_465047" transform="translate(0 -88.1)">
-      <path
-        id="Path_1"
-        data-name="Path 1"
-        d="M11.275,96.671a4.74,4.74,0,1,0-5.546-.063C2.4,97.327,0,99.375,0,101.795c0,3.024,3.743,5.472,8.365,5.472s8.365-2.448,8.365-5.472C16.73,99.444,14.459,97.441,11.275,96.671ZM6.739,91.01a.616.616,0,1,1-.616.616A.621.621,0,0,1,6.739,91.01Zm1.946,15.429L6.8,104.26,8.314,98.6a.653.653,0,0,1,.365-1.2.667.667,0,0,1,.668.662.658.658,0,0,1-.3.542l1.369,5.991Zm2.054-12.268a2.707,2.707,0,0,1-4.5-.177c-.137-.405.143-.582.428-.285a2.161,2.161,0,0,0,3.652.171C10.6,93.635,10.939,93.92,10.739,94.171Zm-.474-1.923a.616.616,0,1,1,.616-.616A.614.614,0,0,1,10.265,92.248Z"
-        fill="#2165c6"
-      />
-      <g
-        id="Group_141"
-        data-name="Group 141"
-        transform="translate(14.659 91.529)"
+    <rect width="40" height="40" fill="url(#pattern0)" />
+    <defs>
+      <pattern
+        id="pattern0"
+        patternContentUnits="objectBoundingBox"
+        width="1"
+        height="1"
       >
-        <path
-          id="Path_2"
-          data-name="Path 2"
-          d="M270.492,150.129H257.864a.967.967,0,0,1-.964-.964h0a.967.967,0,0,1,.964-.964h12.628a.967.967,0,0,1,.964.964h0A.967.967,0,0,1,270.492,150.129Z"
-          transform="translate(-256.9 -148.2)"
-          fill="#2165c6"
-        />
-        <path
-          id="Path_3"
-          data-name="Path 3"
-          d="M270.492,213.229H257.864a.967.967,0,0,1-.964-.964h0a.967.967,0,0,1,.964-.964h12.628a.967.967,0,0,1,.964.964h0A.967.967,0,0,1,270.492,213.229Z"
-          transform="translate(-256.9 -207.699)"
-          fill="#2165c6"
-        />
-        <path
-          id="Path_4"
-          data-name="Path 4"
-          d="M323.485,271.629h-9.421a.967.967,0,0,1-.964-.964h0a.967.967,0,0,1,.964-.964h9.426a.967.967,0,0,1,.964.964h0A.975.975,0,0,1,323.485,271.629Z"
-          transform="translate(-309.893 -262.767)"
-          fill="#2165c6"
-        />
-        <path
-          id="Path_5"
-          data-name="Path 5"
-          d="M323.485,332.029h-9.421a.967.967,0,0,1-.964-.964h0a.967.967,0,0,1,.964-.964h9.426a.967.967,0,0,1,.964.964h0A.975.975,0,0,1,323.485,332.029Z"
-          transform="translate(-309.893 -319.721)"
-          fill="#2165c6"
-        />
-      </g>
-    </g>
+        <use xlink:href="#image0" transform="scale(0.015625)" />
+      </pattern>
+      <image
+        id="image0"
+        width="64"
+        height="64"
+        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEb0lEQVR4nO2aX2gcVRTGf3dmt5QVTCsoFlbRuPVBBaVgk4DYQhVpgwoFIQtVA6tbUChRX/wLeauQPogoupKKlpoIfZAKaUGqliImbUEq+AdMTB8aCCgkLyVIujvHh0m6yWb+7dy7u1M6HyRkc8+e882Zb85+O3MhRYoUKVKkSHGzQvktdB+UfZaigiLfTkKBEOZEUf77E3XaVMqM30IWKgh5xFQpI8gjVIC7TSX0bUBG3DP/+2fKVyXtxoNlEeAukzl9G2A7JsuYQSs4+V8CwpxAfkdJknMRuEyumEzp2wAllG33ejMqOU1cEaHc1op9gyJ9g51VQSs5+CrgekACZkErOYQ2wE7ABGglB20FPFmUXWJzFOE+DR4zllD6bkydi8NBB+EKCCluCaPUtA4eoACMAvfH4aCDcAWEyC8DBQScGndYWarPHqgtAJw8bt/mFT8xpha/+L4qAIN7MgpE9Q/gANvjctCBtgJW1ydOqH8BXnq+6r4eU4t+7+laXvtKie0EH2GyFdCw3rUcfrq2NMQ0W8MktIdgfV0UKFl/dr2xPkZU9Brmof0xaAmXFdxb3I8DwpFx9//F/f7GZaQxxv09HZeDDrQVsKlGWRQVoDsuCQXTjlCKy0EH2go4dlKdAe2PQS0OOkitcFhAWPdfflp2Weg5QYEZ5VCqnPJ2golWwCaHUU0bDFCQACeYaAXYDgWAD09jgZJjZ1yX98ITGd9baV+uOMEXV5zgob3BTjDRCqivKwG49Vp40UYnmAlxgslWQAwn2BjTbA2TMKaAt/bK7WJR3XzV/S7wZr9s9Yp/f0It3lBOMMK3wRmEAsv8A3DqczdlFha84t/bI3zz6fW/1zrB2bgcdGCFBdhO8Lcx26FkO8ysxsX8mc04/jc7wzjoQPsSGP5BnSNggptAoodgO5DoIaiD4d2y+ZYahxEGgDt9A1c4jDzW9K3xeRG+Xsry9vBZ9Z9XQEcV0HWNwwJDravANuC1rioCvOEV0FEF2A4DAI5i59DP6qLp/B/0So+lmAKKxG1Aswr4qEf2Kff+gNe+gjkF5Vem3Of7triyPzRp/uABhqbU+Y97BVwleMK4ArKysq/AG3moP9/3yl3Zqf8I7OCF+iP9UJMVlqxZE7K6r6B0ceO+gqOPrn++75XbtOmJYOSC0awBCTFNobFejdNBGP/ICji+Y6M0D/yykWxQfON2m1Za3Kg12qqAKLHjj+jPgOKl+okxpoDnfo0mzaD4Ew+vP7h0BnjERm20CT7QhAK+fShYms/85hIP6njj2k03A6IoYOKBaDOg/49oSjGmgKf+bG4GRFlLZ4BHbNRGm+ADAXuFz25v384wS9Hz+F/qgum8PxakVykmAXZPezc2aKts+yCc/6nQooIhaTu6D3iy21VZNcdSZomc6fxr8/bNNqmAdkDBPLDt6qvkqveYz5+9TG7LEcCt44lON2Bc4PWtIy0v9JXfUkcbsOTwTs4Cce/Y+N600MA8irEFxbstyJ0iRYoUKW54/A+3B7qPV+16tgAAAABJRU5ErkJggg=="
+      />
+    </defs>
   </svg>
 </template>

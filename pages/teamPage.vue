@@ -1,14 +1,19 @@
 <template>
   <div class="bg">
-    <div class="back" @click="goBack">
-      <backIcon />
-    </div>
     <div class="top">
-      <div class="info">
-        <h2>Team</h2>
-        <p>Meet the team!</p>
+      <img src="~/assets/images/logo.png" class="logo" alt="" />
+      <div @click="toggleSideBar">
+        <toggleIcon />
       </div>
     </div>
+    <div @click="goBack">
+      <p class="back">&#x3c; Back</p>
+    </div>
+    <div class="content-center">
+      <h2>Our Team</h2>
+      <span class="line"></span>
+    </div>
+    <sideBar class="sidebar" />
   </div>
 </template>
 
@@ -19,28 +24,74 @@ export default {
     goBack() {
       this.$router.back()
     },
+    toggleSideBar() {
+      let sideBar = document.querySelector('.sidebar')
+      sideBar.classList.toggle('show')
+    },
   },
 }
 </script>
 
 <style scoped>
 .bg {
-  padding: 10px;
+  background-color: #e5e5e5;
+  padding: 30px 25px;
+  position: relative;
 }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+}
+
 .back {
-  margin: 40px 0 20px 14px;
-}
-.top .info {
-  margin: 50px 0 30px 14px;
-}
-
-.top .info h2 {
-  font-size: 20px;
-}
-
-.top .info p {
+  color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
-  color: #2165c6;
-  font-size: 15px;
+  font-size: 13px;
+  margin-top: 5%;
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 80%;
+}
+
+h2 {
+  color: #b83ed7;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.line {
+  width: 45px;
+  height: 8px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #b83ed7 0%, #3e3fd7 100%);
+  margin: 2% 0 7%;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #5c3fd7;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.show {
+  width: 80%;
+  transform: translateX(0);
 }
 </style>

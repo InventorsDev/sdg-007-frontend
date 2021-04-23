@@ -23,7 +23,7 @@
 
 <style>
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -56,26 +56,21 @@ img {
   margin: 0;
 }
 
-svg path {
-  fill: #2165c6;
-}
-
-.nuxt-link-exact-active svg path {
+/* .nuxt-link-exact-active svg path {
   fill: #0e448f;
-}
+} */
 
 .bottom-area {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #fcfcfc;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
+  height: 84px;
+  padding: 0 40px;
   box-shadow: 0px 0 3px rgba(143, 143, 143, 0.8);
 }
 </style>
