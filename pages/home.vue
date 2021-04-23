@@ -13,7 +13,8 @@
       </div>
       <div class="banner">
         <p class="banner-text">
-          Let’s help you verify your drugs before usage.
+          Let’s help you <span>verify</span> your drugs before
+          <span>usage</span>.
         </p>
         <img src="~/assets/images/doctor.png" class="banner-img" alt="" />
       </div>
@@ -144,6 +145,10 @@ export default {
   line-height: 35px;
   color: rgba(0, 0, 0, 0.7);
   width: 50%;
+}
+
+.banner-text span {
+  color: #5c3fd7;
 }
 
 .banner-img {

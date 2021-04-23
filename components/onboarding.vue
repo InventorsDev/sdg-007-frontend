@@ -12,8 +12,7 @@
             alt=""
           />
           <p class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            corrupti?
+            Health is Wealth! We saw the problem and we are fixing it!
           </p>
           <div class="circles">
             <div class="circle unfill"></div>
@@ -36,8 +35,8 @@
             alt=""
           />
           <p class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            corrupti?
+            Millions have died as a result of fake drugs! We must reduce the
+            number!
           </p>
           <div class="circles">
             <div class="circle"></div>
