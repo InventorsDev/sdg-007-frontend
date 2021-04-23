@@ -1,38 +1,41 @@
 <template>
   <div class="bg">
-    <div class="back" @click="goBack">
-      <backIcon />
-    </div>
     <div class="top">
+      <img src="~/assets/images/logo.png" class="logo" alt="" />
+      <div @click="toggleSideBar">
+        <toggleIcon />
+      </div>
+    </div>
+    <div @click="goBack">
+      <p class="back">&#x3c; Back</p>
+    </div>
+    <div class="content-center">
       <div class="info">
         <h2>Hi {{ myName }}!</h2>
         <p>How are you feeling today?</p>
       </div>
       <div class="banner">
-        <img src="~/assets/images/banner.jpg" width="320px" alt="" />
+        <p class="banner-text">
+          Let’s help you verify your drugs before usage.
+        </p>
+        <img src="~/assets/images/doctor.png" class="banner-img" alt="" />
       </div>
-      <div class="form">
-        <form action="" @submit.prevent="fetchDrug">
-          <div class="form-area">
-            <input
-              type="text"
-              placeholder="Enter Nafdac - No"
-              class="filled-input"
-              id="inputField"
-              v-model="nafdacNo"
-            />
-            <img
-              src="~/assets/images/search-icon.png"
-              class="search-icon"
-              alt=""
-            />
-          </div>
-          <div class="btn-area">
-            <button class="searchBtn" type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
+      <form action="" class="form" @submit.prevent="fetchDrug">
+        <div class="form-area">
+          <input
+            type="text"
+            placeholder="Enter Nafdac - No"
+            class="filled-input"
+            id="inputField"
+            v-model="nafdacNo"
+          />
+        </div>
+        <div class="btn-area">
+          <button class="searchBtn" type="submit">Submit</button>
+        </div>
+      </form>
     </div>
+    <sideBar class="sidebar" />
   </div>
 </template>
 
@@ -49,6 +52,10 @@ export default {
   methods: {
     goBack() {
       this.$router.back()
+    },
+    toggleSideBar() {
+      let sideBar = document.querySelector('.sidebar')
+      sideBar.classList.toggle('show')
     },
     async fetchDrug() {
       if (this.nafdacNo == '') {
@@ -88,104 +95,109 @@ export default {
 
 <style scoped>
 .bg {
-  padding: 10px;
+  background-color: #e5e5e5;
+  padding: 30px 25px;
+  position: relative;
 }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+}
+
 .back {
-  margin: 40px 0 20px 14px;
-}
-.top .info {
-  margin: 50px 0 30px 14px;
-}
-
-.top .info h2 {
-  font-size: 20px;
-}
-
-.top .info p {
+  color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
-  color: #2165c6;
-  font-size: 15px;
+  font-size: 13px;
+  margin-top: 5%;
+}
+
+.info h2 {
+  color: #b83ed7;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.info p {
+  font-weight: 600;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
 }
 
 .banner {
-  width: 100%;
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  margin: 10% 0;
+  align-items: center;
 }
 
-.banner img {
-  border-radius: 10px;
+.banner-text {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 35px;
+  color: rgba(0, 0, 0, 0.7);
+  width: 50%;
 }
 
-.form-area {
-  position: relative;
-  width: 100%;
+.banner-img {
+  width: 50%;
+}
+
+.form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .form-area input {
   width: 320px;
-  padding: 13px 10px;
-
+  padding: 13px;
   background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   border-radius: 10px;
+  margin: 8% 0;
 }
 
-.filled-input {
-  border: 1px solid #707070;
-}
-
-.empty-input {
-  border: 2px solid red;
-  animation: shake 0.5s 8 ease-in-out;
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(5px);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-  75% {
-    transform: translateX(-5px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-
-.empty-input:focus {
-  border: 1px solid #707070;
-}
-
-.form-area input:focus {
-  outline: none;
-}
-
-.search-icon {
-  position: absolute;
-  top: 2px;
-  right: 20px;
-}
-
-.btn-area {
-  margin-top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.form-area input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .searchBtn {
-  background-color: #2165c6;
+  background: linear-gradient(180deg, #3e3fd7 0%, #b83ed7 100%);
+  border-radius: 10px;
   border: none;
-  border-radius: 5px;
   color: #fff;
-  padding: 12px 20px;
+  padding: 13px 40px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #5c3fd7;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.show {
+  width: 80%;
+  transform: translateX(0);
 }
 </style>
