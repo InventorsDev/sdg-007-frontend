@@ -4,7 +4,7 @@
 
     <div class="links">
       <div>
-        <NuxtLink to="/home">
+        <NuxtLink class="sk" to="/home">
           <div class="side-link">
             <img src="~/assets/images/home-icon.svg" alt="" />
             <p>Home</p>
@@ -13,7 +13,7 @@
         <hr />
       </div>
       <div>
-        <NuxtLink to="/aboutPage">
+        <NuxtLink class="sk" to="/aboutPage">
           <div class="side-link">
             <img src="~/assets/images/aboutus-icon.svg" alt="" />
             <p>About</p>
@@ -22,7 +22,7 @@
         <hr />
       </div>
       <div>
-        <NuxtLink to="/teamPage">
+        <NuxtLink class="sk" to="/teamPage">
           <div class="side-link">
             <img src="~/assets/images/team.svg" alt="" />
             <p>Team</p>
@@ -31,7 +31,7 @@
         <hr />
       </div>
       <div>
-        <NuxtLink to="/reviews">
+        <NuxtLink class="sk" to="/reviews">
           <div class="side-link">
             <img src="~/assets/images/reviews.svg" alt="" />
             <p>Review</p>
@@ -60,6 +60,10 @@ export default {}
   margin-top: 50px;
   display: flex;
   flex-direction: column;
+}
+
+.sk {
+  text-decoration: none;
 }
 
 .side-link {
