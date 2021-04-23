@@ -27,16 +27,17 @@
           We decided to provide a solution to this challenge which is in line
           with the United Nations Sustainable Development Goal (SDG) No. 3: Good
           Health and Well-being i.e. Ensuring healthy lives and promoting
-          well-being for all at all ages are essential to sustainable
+          well-being for all and at all ages which is essential to sustainable
           development. We arrived at a solution by developing this App and named
           it "DV App" (Drug Verification app).
         </p>
         <p>
           We designed and built this app for everyone in Nigeria to be able to
-          verify their drugs upon purchase from any drug vendor, if the drugs
-          they are about to consume is void of harm and if it is fully endorsed
-          by the National Agency of Foods and Drugs Administration Company
-          (NAFDAC) which is concerned with the regularization of consumables.
+          verify their drugs upon purchase from any drug store or pharmacy, if
+          the drugs they are about to consume is void of harm and if it is fully
+          endorsed by the National Agency of Foods and Drugs Administration
+          Company (NAFDAC) which is concerned with the regularization of
+          consumables.
         </p>
       </div>
     </div>

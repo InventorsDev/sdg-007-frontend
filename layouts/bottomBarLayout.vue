@@ -61,7 +61,7 @@ img {
 }
 
 .nuxt-link-exact-active .icon {
-  transform: scale(1.2) translateY(-10px);
+  transform: scale(1.2) translateY(-7px);
 }
 
 .bottom-area {
@@ -73,7 +73,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 84px;
+  height: 76px;
   padding: 0 40px;
   box-shadow: 0px 0 3px rgba(143, 143, 143, 0.8);
 }
