@@ -4,31 +4,39 @@
 
     <div class="links">
       <div>
-        <div class="side-link">
-          <img src="~/assets/images/home-icon.svg" alt="" />
-          <p>Home</p>
-        </div>
+        <NuxtLink to="/home">
+          <div class="side-link">
+            <img src="~/assets/images/home-icon.svg" alt="" />
+            <p>Home</p>
+          </div>
+        </NuxtLink>
         <hr />
       </div>
       <div>
-        <div class="side-link">
-          <img src="~/assets/images/aboutus-icon.svg" alt="" />
-          <p>About</p>
-        </div>
+        <NuxtLink to="/aboutPage">
+          <div class="side-link">
+            <img src="~/assets/images/aboutus-icon.svg" alt="" />
+            <p>About</p>
+          </div>
+        </NuxtLink>
         <hr />
       </div>
       <div>
-        <div class="side-link">
-          <img src="~/assets/images/team.svg" alt="" />
-          <p>Team</p>
-        </div>
+        <NuxtLink to="/teamPage">
+          <div class="side-link">
+            <img src="~/assets/images/team.svg" alt="" />
+            <p>Team</p>
+          </div>
+        </NuxtLink>
         <hr />
       </div>
       <div>
-        <div class="side-link">
-          <img src="~/assets/images/reviews.svg" alt="" />
-          <p>Review</p>
-        </div>
+        <NuxtLink to="/reviews">
+          <div class="side-link">
+            <img src="~/assets/images/reviews.svg" alt="" />
+            <p>Review</p>
+          </div>
+        </NuxtLink>
       </div>
     </div>
   </div>

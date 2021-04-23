@@ -3,18 +3,18 @@
     <Nuxt />
     <div class="bottom-area">
       <NuxtLink to="/aboutPage">
-        <div class="icon">
-          <aboutUsIcon />
+        <div>
+          <img class="icon" src="~/assets/images/abt-icon.svg" alt="" />
         </div>
       </NuxtLink>
       <NuxtLink to="/home">
-        <div class="icon">
-          <homeIcon />
+        <div>
+          <img class="icon" src="~/assets/images/hme-icon.svg" alt="" />
         </div>
       </NuxtLink>
       <NuxtLink to="/teamPage">
-        <div class="icon">
-          <teamIcon />
+        <div>
+          <img class="icon" src="~/assets/images/tem-icon.svg" alt="" />
         </div>
       </NuxtLink>
     </div>
@@ -56,9 +56,13 @@ img {
   margin: 0;
 }
 
-/* .nuxt-link-exact-active svg path {
-  fill: #0e448f;
-} */
+.icon {
+  transition: 0.5s;
+}
+
+.nuxt-link-exact-active .icon {
+  transform: scale(1.2) translateY(-10px);
+}
 
 .bottom-area {
   position: fixed;
