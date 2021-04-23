@@ -1,7 +1,25 @@
 <template>
-  <div>
-    <splashPage v-if="isLoading" />
-    <onboarding v-if="firstTime" />
+  <div class="bg">
+    <div class="top">
+      <img src="~/assets/images/logo.png" class="logo" alt="" />
+      <NuxtLink to="/home" class="sk">
+        <p class="skip">Skip >></p>
+      </NuxtLink>
+    </div>
+    <div class="center-content">
+      <p class="head-text">Hi there,</p>
+      <img src="~/assets/images/illustration-intro.png" alt="" />
+      <p>Can i know your name?</p>
+      <form action="" class="form" @submit.prevent="showName">
+        <div class="form-area">
+          <input type="text" placeholder="Name (optional)" v-model="myName" />
+        </div>
+        <div class="btn-area">
+          <button class="searchBtn" type="submit">Submit</button>
+        </div>
+      </form>
+      <p class="sm">*Note, we are not storing your name in any database</p>
+    </div>
   </div>
 </template>
 
@@ -9,19 +27,20 @@
 export default {
   data() {
     return {
-      isLoading: true,
-      firstTime: true,
+      myName: '',
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.isLoading = false
-    }, 3000)
-
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 2000)
-    })
+    if (localStorage.myName) {
+      this.myName = localStorage.myName
+    }
+  },
+  methods: {
+    showName() {
+      localStorage.myName = this.myName
+      this.myName = ''
+      this.$router.push({ path: '/home' })
+    },
   },
 }
 </script>
@@ -40,6 +59,10 @@ export default {
 
 .logo {
   width: 100px;
+}
+
+.sk {
+  text-decoration: none;
 }
 
 .skip {

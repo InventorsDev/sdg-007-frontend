@@ -2,7 +2,9 @@
   <swiper ref="mySwiper" :options="swiperOptions">
     <swiper-slide>
       <div class="bg-area">
-        <p class="skip">Skip >></p>
+        <NuxtLink to="/intro" class="sk">
+          <p class="skip">Skip >></p>
+        </NuxtLink>
         <div class="center-content">
           <img
             src="~/assets/images/onboard1.png"
@@ -24,7 +26,9 @@
 
     <swiper-slide>
       <div class="bg-area">
-        <p class="skip">Skip >></p>
+        <NuxtLink to="/intro" class="sk">
+          <p class="skip">Skip >></p>
+        </NuxtLink>
         <div class="center-content">
           <img
             src="~/assets/images/onboard2.png"
@@ -53,7 +57,7 @@
             class="onboardig-pic"
             alt=""
           />
-          <NuxtLink to="/">
+          <NuxtLink to="/intro">
             <button type="submit" class="btn">Get Started</button>
           </NuxtLink>
           <div class="circles">
@@ -99,6 +103,10 @@ export default {
   width: 100%;
   padding: 40px 30px;
   background: linear-gradient(180deg, #b83ed7 0%, #3e3fd7 100%);
+}
+
+.sk {
+  text-decoration: none;
 }
 
 .skip {

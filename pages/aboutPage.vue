@@ -12,17 +12,33 @@
     <div class="content-center">
       <h2>About DV App</h2>
       <span class="line"></span>
-      <p class="abt">
-        Lorem ipsum dolor sit amet, consectetur adipisc ing elit. Nulla mollis
-        neque vel urna accumsan pretium. Vestibulum sed massa et justo hendr
-        erit cursus.Nullam vel felis in ante accumsan tempor. Vestibulum nulla
-        magna, ultricies ac lectus interdum, sodales tempus erat. Cras id massa
-        faucibus, tincidunt neque sit amet, vulputate justo.Ut risus diam,
-        sodales sit amet mauris quis, vulputate imperdiet nunc. Integer in
-        ligula ut tellus dignissim vulputate euismod a quam. Duis consectetur
-        cursus turpis nec tincidunt. Praesent vel ipsum in ex facilisis aliquam
-        vitae non quam.
-      </p>
+      <div class="abt">
+        <p>
+          There is a popular saying that <strong>"Health is Wealth"</strong>.
+        </p>
+        <p>
+          Our society right now is faced with the challenge of dealing with fake
+          drugs which have taken over our markets and even going to the extent
+          of claiming innocent lives. We saw this as a problem to our society
+          and decided to rise to the challenges to limit its destruction to
+          lives.
+        </p>
+        <p>
+          We decided to provide a solution to this challenge which is in line
+          with the United Nations Sustainable Development Goal (SDG) No. 3: Good
+          Health and Well-being i.e. Ensuring healthy lives and promoting
+          well-being for all at all ages are essential to sustainable
+          development. We arrived at a solution by developing this App and named
+          it "DV App" (Drug Verification app).
+        </p>
+        <p>
+          We designed and built this app for everyone in Nigeria to be able to
+          verify their drugs upon purchase from any drug vendor, if the drugs
+          they are about to consume is void of harm and if it is fully endorsed
+          by the National Agency of Foods and Drugs Administration Company
+          (NAFDAC) which is concerned with the regularization of consumables.
+        </p>
+      </div>
     </div>
     <sideBar class="sidebar" />
   </div>
@@ -46,6 +62,7 @@ export default {
 <style scoped>
 .bg {
   background-color: #e5e5e5;
+  height: 100%;
   padding: 30px 25px;
   position: relative;
 }
@@ -72,7 +89,8 @@ export default {
   justify-content: center;
   text-align: center;
   align-items: center;
-  height: 80%;
+  height: 100%;
+  margin: 50px 0;
 }
 
 h2 {
@@ -84,6 +102,10 @@ h2 {
 .abt {
   font-size: 15px;
   line-height: 25px;
+}
+
+.abt p {
+  margin: 20px 0;
 }
 
 .line {

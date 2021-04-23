@@ -1,6 +1,6 @@
 <template>
   <div class="splash-bg">
-    <img src="~/assets/images/logo.png" alt="" />
+    <img src="~/assets/images/logo.svg" alt="" />
   </div>
 </template>
 
@@ -12,14 +12,14 @@ export default {}
 .splash-bg {
   height: 100vh;
   width: 100%;
-  background-color: #0e448f;
+  background-color: rgba(12, 0, 15, 0.53);
   background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.splash-bg IMG {
+.splash-bg img {
   max-width: 100%;
 }
 </style>

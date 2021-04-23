@@ -12,6 +12,25 @@
     <div class="content-center">
       <h2>Our Team</h2>
       <span class="line"></span>
+
+      <div class="overall-container">
+        <swiper ref="mySwiper" :options="swiperOptions">
+          <swiper-slide>
+            <div class="container"></div>
+            <div class="img-container"></div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div class="container"></div>
+            <div class="img-container"></div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div class="container"></div>
+            <div class="img-container"></div>
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
     <sideBar class="sidebar" />
   </div>
@@ -20,6 +39,17 @@
 <script>
 export default {
   layout: 'bottomBarLayout',
+
+  data() {
+    return {
+      swiperOptions: {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        // Some Swiper option/callback...
+      },
+    }
+  },
   methods: {
     goBack() {
       this.$router.back()
@@ -28,6 +58,15 @@ export default {
       let sideBar = document.querySelector('.sidebar')
       sideBar.classList.toggle('show')
     },
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper
+    },
+  },
+  mounted() {
+    console.log('Current Swiper instance object', this.swiper)
+    this.swiper.slideTo(0, 1000, false)
   },
 }
 </script>
@@ -75,7 +114,37 @@ h2 {
   height: 8px;
   border-radius: 10px;
   background: linear-gradient(180deg, #b83ed7 0%, #3e3fd7 100%);
-  margin: 2% 0 7%;
+  margin: 7% 0 25%;
+}
+
+.overall-container {
+  position: relative;
+  width: 100%;
+  height: 40%;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 200px;
+  background: #c4c4c4;
+  opacity: 0.6;
+  border-radius: 15px;
+}
+
+.img-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 234px;
+  height: 234px;
+  background: url('~/assets/images/jo.jpg') center no-repeat;
+  background-size: cover;
+  border-radius: 15px;
 }
 
 .sidebar {

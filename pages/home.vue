@@ -6,9 +6,6 @@
         <toggleIcon />
       </div>
     </div>
-    <div @click="goBack">
-      <p class="back">&#x3c; Back</p>
-    </div>
     <div class="content-center">
       <div class="info">
         <h2>Hi {{ myName }}!</h2>
