@@ -23,13 +23,14 @@
           <input
             type="text"
             placeholder="Enter Nafdac - No"
-            class="filled-input"
             id="inputField"
             v-model="nafdacNo"
           />
         </div>
         <div class="btn-area">
-          <button class="searchBtn" type="submit">Submit</button>
+          <button class="searchBtn" :disabled="isEmpty" type="submit">
+            Submit
+          </button>
         </div>
       </form>
     </div>
@@ -44,6 +45,7 @@ export default {
     return {
       myName: '',
       nafdacNo: '',
+      isEmpty: true,
       drugDetails: [],
     }
   },
@@ -56,29 +58,22 @@ export default {
       sideBar.classList.toggle('show')
     },
     async fetchDrug() {
-      if (this.nafdacNo == '') {
-        let inputField = document.getElementById('inputField')
-        inputField.classList.add('empty-input')
-      } else {
-        inputField.classList.remove('empty-input')
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start()
+        setTimeout(() => this.$nuxt.$loading.finish(), 2000)
+      })
 
-        this.$nextTick(() => {
-          this.$nuxt.$loading.start()
-          setTimeout(() => this.$nuxt.$loading.finish(), 2000)
-        })
+      this.drugDetails = await this.$axios.$get(
+        'https://dvapp.000webhostapp.com/api.php?',
+        {
+          params: {
+            reg: this.nafdacNo,
+          },
+        }
+      )
 
-        this.drugDetails = await this.$axios.$get(
-          'https://dvapp.000webhostapp.com/api.php?',
-          {
-            params: {
-              reg: this.nafdacNo,
-            },
-          }
-        )
-
-        localStorage.setItem('drugsDetail', JSON.stringify(this.drugDetails))
-        this.$router.push({ path: '/resultPage' })
-      }
+      localStorage.setItem('drugsDetail', JSON.stringify(this.drugDetails))
+      this.$router.push({ path: '/resultPage' })
     },
   },
   mounted() {
@@ -87,6 +82,15 @@ export default {
     } else {
       this.myName = 'Anonymous'
     }
+  },
+  watch: {
+    nafdacNo: function () {
+      if (this.nafdacNo.length >= 5) {
+        this.isEmpty = false
+      } else {
+        this.isEmpty = true
+      }
+    },
   },
 }
 </script>
@@ -170,6 +174,10 @@ export default {
   box-sizing: border-box;
   border-radius: 10px;
   margin: 8% 0;
+}
+
+.form-area input:focus {
+  outline: none;
 }
 
 .form-area input::placeholder {
