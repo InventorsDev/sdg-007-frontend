@@ -2,50 +2,43 @@
   <div class="bg">
     <div class="top">
       <img src="~/assets/images/logo.png" class="logo" alt="" />
-      <NuxtLink to="/home" class="sk">
-        <p class="skip">Skip >></p>
-      </NuxtLink>
+      <div @click="toggleSideBar">
+        <toggleIcon />
+      </div>
     </div>
-    <div class="center-content">
-      <p class="head-text">Hi there,</p>
-      <img src="~/assets/images/illustration-intro.png" alt="" />
-      <p>Can I know your name?</p>
-      <form action="" class="form" @submit.prevent="showName">
+    <div @click="goBack">
+      <p class="back">&#x3c; Back</p>
+    </div>
+    <div class="content-center">
+      <img src="~/assets/images/newsletter.png" class="newsletter-img" alt="" />
+      <p class="infoo">Subscribe to our newsletter to receive weekly updates</p>
+      <form action="" class="form">
         <div class="form-area">
-          <input type="text" placeholder="Name (optional)" v-model="myName" />
+          <input
+            type="text"
+            placeholder="Enter Email Address"
+            id="inputField"
+          />
         </div>
         <div class="btn-area">
           <button class="searchBtn" type="submit">Submit</button>
         </div>
       </form>
-      <p class="sm">*Note, we are not storing your name in any database</p>
     </div>
+    <sideBar class="sidebar" />
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      myName: '',
-    }
-  },
-  mounted() {
-    if (localStorage.myName) {
-      this.myName = localStorage.myName
-    } else {
-      localStorage.myName = 'Anonymous'
-    }
-  },
+  layout: 'bottomBarLayout',
   methods: {
-    showName() {
-      if (this.myName !== '') {
-        localStorage.myName = this.myName
-      } else {
-        localStorage.myName = 'Anonymous'
-      }
-      this.myName = ''
-      this.$router.push({ path: '/home' })
+    goBack() {
+      this.$router.back()
+    },
+    toggleSideBar() {
+      let sideBar = document.querySelector('.sidebar')
+      sideBar.classList.toggle('show')
     },
   },
 }
@@ -67,36 +60,39 @@ export default {
   width: 100px;
 }
 
-.sk {
-  text-decoration: none;
-}
-
-.skip {
+.back {
   color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
   font-size: 13px;
+  margin-top: 5%;
 }
 
-.center-content {
+.content-center {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  justify-content: center;
   height: 80%;
 }
 
-.head-text {
-  margin-bottom: -70px;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 20px;
-  font-weight: bold;
+.newsletter-img {
+  width: 272px;
 }
 
-p {
-  font-weight: 600;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.7);
+.infoo {
+  font-size: 20px;
+  font-weight: bold;
+  width: 272px;
+  margin: 5% 0;
+  color: #b83ed7;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .form-area input {
@@ -127,12 +123,20 @@ p {
   font-size: 16px;
 }
 
-.sm {
-  font-size: 10px;
-  position: absolute;
-  bottom: 5%;
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  top: 0;
   left: 0;
-  text-align: center;
-  width: 100%;
+  z-index: 100;
+  background: #5c3fd7;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.show {
+  width: 80%;
+  transform: translateX(0);
 }
 </style>

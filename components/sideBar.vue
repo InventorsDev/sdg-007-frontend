@@ -39,6 +39,9 @@
         </NuxtLink>
       </div>
     </div>
+    <NuxtLink class="sk" to="/subscribepage">
+      <p class="bottom-info">Sign up to our Newsletter</p>
+    </NuxtLink>
   </div>
 </template>
 
@@ -57,7 +60,7 @@ export default {}
 }
 
 .links {
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -79,7 +82,17 @@ export default {}
 
 hr {
   width: 100px;
-  margin: 40px 0 20px 35px;
+  margin: 30px 0 15px 35px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bottom-info {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
 }
 </style>
