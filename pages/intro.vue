@@ -33,11 +33,17 @@ export default {
   mounted() {
     if (localStorage.myName) {
       this.myName = localStorage.myName
+    } else {
+      localStorage.myName = 'Anonymous'
     }
   },
   methods: {
     showName() {
-      localStorage.myName = this.myName
+      if (this.myName !== '') {
+        localStorage.myName = this.myName
+      } else {
+        localStorage.myName = 'Anonymous'
+      }
       this.myName = ''
       this.$router.push({ path: '/home' })
     },
@@ -101,6 +107,10 @@ p {
   box-sizing: border-box;
   border-radius: 10px;
   margin: 8% 0;
+}
+
+.form-area input:focus {
+  outline: none;
 }
 
 .form-area input::placeholder {

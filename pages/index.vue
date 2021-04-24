@@ -16,7 +16,12 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isLoading = false
-    }, 3000)
+      if (localStorage.myName) {
+        console.log('oya oh')
+        this.firstTime = false
+        this.$router.push({ path: '/intro' })
+      }
+    }, 2000)
 
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
