@@ -17,8 +17,8 @@ export default {
     setTimeout(() => {
       this.isLoading = false
       if (localStorage.myName) {
-        console.log('oya oh')
-        this.firstTime = false
+        console.log('not a new user!')
+        this.firstTime = !this.firstTime
         this.$router.push({ path: '/intro' })
       }
     }, 2000)

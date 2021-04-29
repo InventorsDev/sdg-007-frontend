@@ -95,7 +95,9 @@ export default {
 }
 
 h2 {
-  color: #b83ed7;
+  background: -webkit-linear-gradient(180deg, #3e3fd7 0%, #b83ed7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-size: 22px;
 }
