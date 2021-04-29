@@ -63,6 +63,7 @@ export default {
   async created() {
     const data = await this.fetchTeamMembers()
     this.teamMembers = data
+    console.log(this.teamMembers)
   },
   computed: {
     swiper() {
@@ -80,7 +81,7 @@ export default {
 .bg {
   background-color: #e5e5e5;
   padding: 30px 25px;
-  position: relative;
+  position: fixed;
 }
 .top {
   display: flex;
