@@ -13,24 +13,19 @@
       <h2>Our Team</h2>
       <span class="line"></span>
 
-      <div class="overall-container">
-        <swiper ref="mySwiper" :options="swiperOptions">
-          <swiper-slide>
-            <div class="container"></div>
-            <div class="img-container"></div>
-          </swiper-slide>
-
-          <swiper-slide>
-            <div class="container"></div>
-            <div class="img-container"></div>
-          </swiper-slide>
-
-          <swiper-slide>
-            <div class="container"></div>
-            <div class="img-container"></div>
-          </swiper-slide>
-        </swiper>
-      </div>
+      <swiper ref="mySwiper" :options="swiperOptions">
+        <swiper-slide v-for="teamMember in teamMembers" :key="teamMember.id">
+          <div
+            class="inner"
+            :style="{ backgroundImage: 'url(' + teamMember.Image + ')' }"
+          >
+            <div class="content">
+              <p class="name">{{ teamMember.FullName }}</p>
+              <p class="position">{{ teamMember.stack }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
     </div>
     <sideBar class="sidebar" />
   </div>
@@ -48,6 +43,7 @@ export default {
         },
         // Some Swiper option/callback...
       },
+      teamMembers: [],
     }
   },
   methods: {
@@ -58,6 +54,15 @@ export default {
       let sideBar = document.querySelector('.sidebar')
       sideBar.classList.toggle('show')
     },
+    async fetchTeamMembers() {
+      const res = await fetch('http://dvapp.000webhostapp.com/developer.php')
+      const data = await res.json()
+      return data
+    },
+  },
+  async created() {
+    const data = await this.fetchTeamMembers()
+    this.teamMembers = data
   },
   computed: {
     swiper() {
@@ -104,7 +109,9 @@ export default {
 }
 
 h2 {
-  color: #b83ed7;
+  background: -webkit-linear-gradient(180deg, #3e3fd7 0%, #b83ed7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-size: 22px;
 }
@@ -117,34 +124,42 @@ h2 {
   margin: 7% 0 25%;
 }
 
-.overall-container {
-  position: relative;
-  width: 100%;
-  height: 40%;
-}
-
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
-  height: 200px;
+.inner {
+  width: 264px;
+  height: 264px;
   background: #c4c4c4;
-  opacity: 0.6;
   border-radius: 15px;
+  /* background-image: url('~/assets/images/jo.jpg'); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
-.img-container {
+.content {
+  text-align: left;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 234px;
-  height: 234px;
-  background: url('~/assets/images/jo.jpg') center no-repeat;
-  background-size: cover;
-  border-radius: 15px;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  opacity: 0.6;
+  padding: 5px 20px;
+  color: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.position {
+  font-size: 14px;
+}
+
+.name,
+.position {
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .sidebar {

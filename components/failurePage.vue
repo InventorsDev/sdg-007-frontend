@@ -1,23 +1,21 @@
 <template>
-  <div class="container">
-    <div class="cont">
-      <p class="title">{{ drugDetails.RegNo }}</p>
-      <img src="~/assets/images/fail-tick.png" class="tick" alt="" />
+  <div class="cont">
+    <!-- <p class="title">{{ drugDetails.RegNo }}</p> -->
+    <img src="~/assets/images/fail-tick.png" class="tick" alt="" />
 
-      <div class="info">
-        <p class="highlight">Oops!</p>
-        <p>
-          This drug is not approved by NAFDAC and we strongly advice you not to
-          make use of this drug. Please visit the NAFDAC website to lay a
-          complaint
-          <a
-            href="https://www.nafdac.gov.ng/about-nafdac/contact-nafdac/complaints-and-enquiries/"
-            target="_blank"
-            >HERE</a
-          >.
-        </p>
-      </div>
-    </div>
+    <p class="highlight">Drug Not Approved !</p>
+    <p>
+      This drug is not approved by NAFDAC and we strongly advice you not to make
+      use of this drug. Please visit the NAFDAC website to lay a complaint
+      <a
+        href="https://www.nafdac.gov.ng/about-nafdac/contact-nafdac/complaints-and-enquiries/"
+        target="_blank"
+        >HERE</a
+      >.
+    </p>
+    <NuxtLink to="/home">
+      <button class="searchBtn" type="submit">Ok</button>
+    </NuxtLink>
   </div>
 </template>
 
@@ -30,10 +28,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  widows: 100%;
-}
-
 img {
   max-width: 100%;
 }
@@ -52,15 +46,16 @@ p {
   font-weight: bold;
 }
 
-.title {
+/* .title {
   font-weight: bolder;
   font-size: 23px;
-  margin-bottom: 40px;
-}
+  margin-bottom: 20%;
+} */
 
 .tick {
-  margin-bottom: 30px;
-  margin-left: 35px;
+  margin-top: 20%;
+  margin-bottom: 15%;
+  margin-left: 25px;
   animation: animate 3s infinite ease-in-out;
 }
 
@@ -85,23 +80,20 @@ p {
 }
 
 .highlight {
-  color: #e51514;
+  color: #f01515;
   font-weight: bolder;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10%;
 }
 
-@media (min-height: 700px) {
-  .title {
-    margin-bottom: 90px;
-  }
-
-  .tick {
-    margin-bottom: 80px;
-  }
-
-  .highlight {
-    margin-bottom: 30px;
-  }
+.searchBtn {
+  background: linear-gradient(180deg, #3e3fd7 0%, #b83ed7 100%);
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  padding: 13px 40px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 30%;
 }
 </style>

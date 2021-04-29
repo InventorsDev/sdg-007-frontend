@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
-    <div class="back" @click="goBack">
-      <backIcon />
+    <div @click="goBack">
+      <p class="back">&#x3c; Back</p>
     </div>
     <div class="content">
       <div v-if="drugDetails.Status === 'success'">
@@ -48,6 +48,9 @@ export default {
 }
 
 .back {
-  margin: 40px 0 20px 30px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 13px;
+  margin: 10% 5%;
 }
 </style>
