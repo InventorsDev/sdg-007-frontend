@@ -48,7 +48,7 @@ export default {
       sideBar.classList.toggle('show')
     },
     async fetchTeamMembers() {
-      const res = await fetch('http://dvapp.000webhostapp.com/developer.php')
+      const res = await fetch('https://dvapp.000webhostapp.com/developer.php')
       const data = await res.json()
       return data
     },
