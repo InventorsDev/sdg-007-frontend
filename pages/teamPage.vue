@@ -12,21 +12,21 @@
     <div class="content-center">
       <h2>Our Team</h2>
       <span class="line"></span>
-
-      <swiper ref="mySwiper" :options="swiperOptions">
-        <swiper-slide v-for="teamMember in teamMembers" :key="teamMember.id">
-          <div
-            class="inner"
-            :style="{ backgroundImage: 'url(' + teamMember.Image + ')' }"
-          >
-            <div class="content">
-              <p class="name">{{ teamMember.FullName }}</p>
-              <p class="position">{{ teamMember.stack }}</p>
-            </div>
+      <div class="container">
+        <div
+          class="imgArea"
+          v-for="teamMember in teamMembers"
+          :key="teamMember.id"
+          :style="{ backgroundImage: 'url(' + teamMember.Image + ')' }"
+        >
+          <div class="content">
+            <p class="name">{{ teamMember.FullName }}</p>
+            <p class="position">{{ teamMember.stack }}</p>
           </div>
-        </swiper-slide>
-      </swiper>
+        </div>
+      </div>
     </div>
+
     <sideBar class="sidebar" />
   </div>
 </template>
@@ -34,15 +34,8 @@
 <script>
 export default {
   layout: 'bottomBarLayout',
-
   data() {
     return {
-      swiperOptions: {
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        // Some Swiper option/callback...
-      },
       teamMembers: [],
     }
   },
@@ -62,17 +55,8 @@ export default {
   },
   async created() {
     const data = await this.fetchTeamMembers()
-    this.teamMembers = data
-    console.log(this.teamMembers)
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.$swiper
-    },
-  },
-  mounted() {
-    console.log('Current Swiper instance object', this.swiper)
-    this.swiper.slideTo(0, 1000, false)
+    this.teamMembers = data.developers
+    // console.log(this.teamMembers)
   },
 }
 </script>
@@ -81,7 +65,8 @@ export default {
 .bg {
   background-color: #e5e5e5;
   padding: 30px 25px;
-  position: fixed;
+  height: 100%;
+  /* position: fixed; */
 }
 .top {
   display: flex;
@@ -106,7 +91,7 @@ export default {
   justify-content: center;
   text-align: center;
   align-items: center;
-  height: 80%;
+  margin-top: 15%;
 }
 
 h2 {
@@ -122,45 +107,46 @@ h2 {
   height: 8px;
   border-radius: 10px;
   background: linear-gradient(180deg, #b83ed7 0%, #3e3fd7 100%);
-  margin: 7% 0 25%;
+  margin: 7% 0 15%;
 }
 
-.inner {
-  width: 264px;
+.imgArea {
   height: 264px;
-  background: #c4c4c4;
-  border-radius: 15px;
-  /* background-image: url('~/assets/images/jo.jpg'); */
+  width: 264px;
+  background-image: url('~assets/images/jo.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  border-radius: 15px;
   position: relative;
+  margin-bottom: 10%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.63);
 }
 
-.content {
+.imgArea:last-child {
+  margin-bottom: 30%;
+}
+
+.imgArea .content {
   text-align: left;
+  padding: 5px 20px;
   position: absolute;
   bottom: 0;
+  background: #00000083;
   width: 100%;
-  background-color: #000000;
-  opacity: 0.6;
-  padding: 5px 20px;
   color: #fff;
+  text-shadow: 2px 2px 5px #000;
+  line-height: 20px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-.name {
+.content .name {
   font-weight: bold;
 }
 
-.position {
+.content .position {
   font-size: 14px;
-}
-
-.name,
-.position {
-  text-shadow: 2px 2px 4px #000000;
 }
 
 .sidebar {
