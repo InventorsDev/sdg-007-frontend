@@ -12,31 +12,15 @@
     <div class="content-center">
       <h2>Our Team</h2>
       <span class="line"></span>
-
       <swiper ref="mySwiper" :options="swiperOptions">
-        <swiper-slide>
-          <div class="inner">
+        <swiper-slide v-for="teamMember in teamMembers" :key="teamMember.id">
+          <div
+            class="inner"
+            :style="{ backgroundImage: 'url(' + teamMember.Image + ')' }"
+          >
             <div class="content">
-              <p class="name">Joel Olawanle</p>
-              <p class="position">Frontend Developer</p>
-            </div>
-            <div class="circles">
-              <div class="circle unfill"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="inner">
-            <div class="content">
-              <p class="name">Joel Poppola</p>
-              <p class="position">Frontend Developer</p>
-            </div>
-            <div class="circles">
-              <div class="circle"></div>
-              <div class="circle unfill"></div>
-              <div class="circle"></div>
+              <p class="name">{{ teamMember.FullName }}</p>
+              <p class="position">{{ teamMember.stack }}</p>
             </div>
           </div>
         </swiper-slide>
@@ -95,7 +79,7 @@ export default {
 .bg {
   background-color: #e5e5e5;
   padding: 30px 25px;
-  position: fixed;
+  position: relative;
 }
 .top {
   display: flex;
@@ -144,7 +128,7 @@ h2 {
   height: 264px;
   background: #c4c4c4;
   border-radius: 15px;
-  background-image: url('~/assets/images/jo.jpg');
+  /* background-image: url('~/assets/images/jo.jpg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -175,29 +159,6 @@ h2 {
 .name,
 .position {
   text-shadow: 2px 2px 4px #000000;
-}
-
-.circles {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-}
-
-.circles .circle {
-  width: 10px;
-  height: 10px;
-  background: #5c3fd7;
-  border-radius: 50%;
-  margin: 3px;
-  border: 2px solid #5c3fd7;
-}
-
-.circles .unfill {
-  background: transparent;
 }
 
 .sidebar {

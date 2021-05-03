@@ -6,8 +6,9 @@
         <p class="skip">Skip >></p>
       </NuxtLink>
     </div>
+
+    <p class="head-text">Hi there,</p>
     <div class="center-content">
-      <p class="head-text">Hi there,</p>
       <img src="~/assets/images/illustration-intro.png" alt="" />
       <p>Can I know your name?</p>
       <form action="" class="form" @submit.prevent="showName">
@@ -77,6 +78,15 @@ export default {
   font-size: 13px;
 }
 
+.head-text {
+  margin-bottom: -70px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 20%;
+}
+
 .center-content {
   display: flex;
   flex-direction: column;
@@ -84,13 +94,6 @@ export default {
   text-align: center;
   justify-content: center;
   height: 80%;
-}
-
-.head-text {
-  margin-bottom: -70px;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 20px;
-  font-weight: bold;
 }
 
 p {
