@@ -31,17 +31,14 @@
         <hr />
       </div>
       <div>
-        <NuxtLink class="sk" to="/reviews">
+        <NuxtLink class="sk" to="/subscribePage">
           <div class="side-link">
             <img src="~/assets/images/reviews.svg" alt="" />
-            <p>Review</p>
+            <p>Newsletter</p>
           </div>
         </NuxtLink>
       </div>
     </div>
-    <NuxtLink class="sk" to="/subscribepage">
-      <p class="bottom-info">Sign up to our Newsletter</p>
-    </NuxtLink>
   </div>
 </template>
 
@@ -84,15 +81,5 @@ hr {
   width: 100px;
   margin: 30px 0 15px 35px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.bottom-info {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 11px;
-  font-weight: 500;
-  color: #fff;
 }
 </style>

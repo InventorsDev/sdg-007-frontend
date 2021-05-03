@@ -12,7 +12,7 @@
     <div class="content-center">
       <img src="~/assets/images/newsletter.png" class="newsletter-img" alt="" />
       <p class="infoo">Subscribe to our newsletter to receive weekly updates</p>
-      <form action="" class="form">
+      <form action="" class="form" @submit.prevent="successLoad">
         <div class="form-area">
           <input
             type="text"
@@ -39,6 +39,9 @@ export default {
     toggleSideBar() {
       let sideBar = document.querySelector('.sidebar')
       sideBar.classList.toggle('show')
+    },
+    successLoad() {
+      this.$router.push({ path: '/emailSuccess' })
     },
   },
 }
