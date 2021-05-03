@@ -1,6 +1,7 @@
 # sdg-007
 Nuxt.js was used in building the frontend of this web application and PHP/mySQL for the backend/database.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0bd0cc77-51a0-458f-80f7-aa979252c345/deploy-status)](https://app.netlify.com/sites/dv-app/deploys)
 
 ## About
 There is a popular saying that _"Health is Wealth"_.
