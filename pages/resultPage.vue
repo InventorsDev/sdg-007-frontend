@@ -34,7 +34,7 @@ export default {
   mounted() {
     if (localStorage.drugsDetail) {
       this.drugDetails = JSON.parse(localStorage.getItem('drugsDetail'))
-      console.log(this.drugDetails)
+      // console.log(this.drugDetails)
     } else {
       console.log('nothing')
     }
