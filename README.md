@@ -32,6 +32,8 @@ To make use of the Drug Verification app, Please wait until more info is release
 [@Oyedele Temitope](https://github.com/oyedeletemitope)
 [@Popoola Temitope](https://github.com/popoolatopzy)
 [@Isaac Femi Collins](https://github.com/femicollins83)
+[@David Emaye](https://github.com/emodot)
+
 
 ## Contributing
 
