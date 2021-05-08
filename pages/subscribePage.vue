@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .bg {
-  background-color: #e5e5e5;
+  background-color: #fbfbfb;
   padding: 30px 25px;
   position: relative;
 }
