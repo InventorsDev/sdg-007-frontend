@@ -24,7 +24,24 @@ This App provides a solution that addresses the Sustainable Development Goal (SD
 
 
 ## Usage
-To make use of the Drug Verification app, Please wait until more info is released.
+To make use of the Drug Verification app,
+
+Install `npm` or `yarn` if you dont have any of them already installed.
+
+After clonning the repo to your local machine and moving into the cloned folder
+
+### Install dependencies
+$ npm install
+
+### Serve with hot reload at localhost:3000
+$ npm run dev
+
+### Build for production and launch server
+$ npm run build
+$ npm run start
+
+### Generate static project
+$ npm run generate
 
 ## Authors
 
