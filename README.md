@@ -51,6 +51,14 @@ $ npm run generate
 [@Isaac Femi Collins](https://github.com/femicollins83)
 [@David Emaye](https://github.com/emodot)
 
+## UI/UX
+
+Here is  link to the UI/UX design of this App - https://www.figma.com/file/NgLAzyEU0oQnJgwwi2BS7G/DV-App?node-id=0%3A1
+
+## Presentation slide
+
+Here is a link to our slide for pitching DV App - https://www.canva.com/design/DAEd5BRug6Q/MMoUXt7D_ze5TV1hSH8xjQ/view?utm_content=DAEd5BRug6Q&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
 
 ## Contributing
 
