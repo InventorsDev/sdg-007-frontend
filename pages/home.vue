@@ -72,8 +72,10 @@ export default {
         }
       )
 
-      localStorage.setItem('drugsDetail', JSON.stringify(this.drugDetails))
-      this.$router.push({ path: '/resultPage' })
+      this.$router.push({
+        name: 'resultPage',
+        params: { drugsDetail: this.drugDetails },
+      })
     },
   },
   mounted() {
