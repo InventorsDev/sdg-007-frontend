@@ -18,9 +18,8 @@
 </template>
 
 <script>
-import successPage from '../components/successPage.vue'
 export default {
-  components: { successPage },
+  name: 'resultPage',
   data() {
     return {
       drugDetails: '',
@@ -32,9 +31,8 @@ export default {
     },
   },
   mounted() {
-    if (localStorage.drugsDetail) {
-      this.drugDetails = JSON.parse(localStorage.getItem('drugsDetail'))
-      // console.log(this.drugDetails)
+    if (this.$route.params.drugsDetail) {
+      this.drugDetails = this.$route.params.drugsDetail
     } else {
       console.log('nothing')
     }
