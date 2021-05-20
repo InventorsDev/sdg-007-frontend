@@ -56,6 +56,10 @@ export default {
     manifest: {
       lang: 'en',
       name: 'DV App',
+      short_name: 'DV App',
+      start_url: '.',
+      description: 'A simple drug verfication app for Nigerians.',
+      background_color: '#35216F',
       useWebmanifestExtension: false,
       theme_color: '#6C3FD7',
     },
